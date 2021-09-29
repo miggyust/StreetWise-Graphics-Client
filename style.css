@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    user-select: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+#welcomediv {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(rgb(0, 0, 0, 1), rgb(0, 0, 0, .85)), url("backgrounds/building-background.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+
+#michaelangelo1 {
+    width: 1020px;
+    position: absolute;
+    top: 131px;
+    right: -150px;
+    z-index: 3;
+}
+
+#michaelangelo2  {
+    width: 1020px;
+    position: absolute;
+    top: 131px;
+    right: -182px;
+    z-index: 2;
+}
+
+#michaelangelo3 {
+    width: 1020px;
+    position: absolute;
+    top: 131px;
+    right: -220px;
+    z-index: 1;
+}
+
+#classytext {
+    width: 1020px;
+    position: relative;
+    top: 100px;
+    left: 180px;
+    opacity: 22%;
+}
