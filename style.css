@@ -37,7 +37,7 @@ body {
 #michaelangelo1 {
     width: 420px;
     position: absolute;
-    top: 101px;
+    top: 151px;
     right: 100px;
     z-index: 3;
 }
@@ -45,7 +45,7 @@ body {
 #michaelangelo2  {
     width: 420px;
     position: absolute;
-    top: 101px;
+    top: 151px;
     right: 70px;
     z-index: 2;
 }
@@ -53,13 +53,13 @@ body {
 #michaelangelo3 {
     width: 420px;
     position: absolute;
-    top: 101px;
+    top: 151px;
     right: 40px;
     z-index: 1;
 }
 
 #classytext {
-    width: 1020px;
+    width: 1080px;
     position: absolute;
     top: 100px;
     left: 180px;
@@ -69,10 +69,10 @@ body {
 #owner-jericho {
     text-transform: uppercase;
     font-family: 'Sigmar One';
-    color: #fff;
-    font-size: 18px;
+    color: #ffff00;
+    font-size: 22px;
     position: absolute;
-    top: 157px;
+    top: 187px;
     left: 50px;
     letter-spacing: 10px;
 }
@@ -80,11 +80,11 @@ body {
 #streetwisecomp {
     text-transform: uppercase;
     font-family: 'Dokdo';
-    color: #fff;
-    font-size: 100px;
+    color: #ffff00;
+    font-size: 93px;
     position: absolute;
-    top: 170px;
-    left: 70px;
+    top:210px;
+    left: 78px;
     z-index: 5;
     letter-spacing: 4px;
 }
@@ -94,26 +94,26 @@ body {
     font-family: 'Poppins';
     color: #ffff00;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 22px;
     font-style: italic;
     letter-spacing: 8px;
     position: absolute;
-    top: 280px;
-    left: 610px;
+    top: 334px;
+    left: 578px;
 }
 
 .introduce {
     color: #fff;    
-    width: 770px;
+    width: 920px;
     text-align: right;
-    font-size: 30px;
-    line-height: 2.5rem;
-    font-weight: 700;
+    font-size: 32px;
+    line-height: 2.9rem;
+    font-weight: 600;
     font-style: italic;
     font-family: 'Poppins';
     position: absolute;
-    top: 330px;
-    left: 210px;
+    top: 390px;
+    left: 80px;
 }
 
 .container--collection {
@@ -127,7 +127,7 @@ body {
     margin: 150px 0px 0px 50px;
 }
 
-#new-arrivals {
+#new-arrivals, #designs {
     font-family: 'Poppins';
     font-weight: 900;
     font-style: italic;
@@ -136,18 +136,17 @@ body {
     font-size: 120px;
 }
 
-.container--collection__newarrivals {
-    grid-column: 1 / 4;
-    grid-row: 2 / 4;
-    margin: 30px 0px 50px 20px
+.container--collection__newarrivals, .container--collection__designs {
+    margin: 100px 0px 50px 20px
 }
 
-.carousel {
+.carousel__new-arrivals, .carousel__designs {
     display: flex;
-    gap: 80px;
+    gap: 66px;
+    overflow-x: hidden;
 }
 
-.new-arrival__image {
+.new-arrival__image, .designs__image {
     width: 680px;
     height: 900px;
 }
