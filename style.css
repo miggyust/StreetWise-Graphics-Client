@@ -15,6 +15,7 @@ img {
 
 body {
     overflow-x: hidden;
+    background-color: #F05A43;
 }
 
 #welcomediv {
@@ -34,26 +35,26 @@ body {
 /* end of navbar */
 
 #michaelangelo1 {
-    width: 1020px;
+    width: 420px;
     position: absolute;
     top: 101px;
-    right: -150px;
+    right: 100px;
     z-index: 3;
 }
 
 #michaelangelo2  {
-    width: 1020px;
+    width: 420px;
     position: absolute;
     top: 101px;
-    right: -182px;
+    right: 70px;
     z-index: 2;
 }
 
 #michaelangelo3 {
-    width: 1020px;
+    width: 420px;
     position: absolute;
     top: 101px;
-    right: -220px;
+    right: 40px;
     z-index: 1;
 }
 
@@ -107,10 +108,46 @@ body {
     text-align: right;
     font-size: 30px;
     line-height: 2.5rem;
-    font-weight: 500;
+    font-weight: 700;
     font-style: italic;
     font-family: 'Poppins';
     position: absolute;
     top: 330px;
     left: 210px;
+}
+
+.container--collection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: minmax(300px, auto)
+}
+
+.container--collection__header {
+    grid-column: 1 / 4;
+    margin: 150px 0px 0px 50px;
+}
+
+#new-arrivals {
+    font-family: 'Poppins';
+    font-weight: 900;
+    font-style: italic;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 120px;
+}
+
+.container--collection__newarrivals {
+    grid-column: 1 / 4;
+    grid-row: 2 / 4;
+    margin: 30px 0px 50px 20px
+}
+
+.carousel {
+    display: flex;
+    gap: 80px;
+}
+
+.new-arrival__image {
+    width: 680px;
+    height: 900px;
 }
