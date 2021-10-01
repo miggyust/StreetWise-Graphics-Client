@@ -14,14 +14,15 @@ img {
 }
 
 body {
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     background-color: #F05A43;
+    width: auto;
 }
 
 #welcomediv {
-    width: 100vw;
+    width: auto;
     height: 100vh;
-    background-image: linear-gradient(rgb(0, 0, 0, 1), rgb(0, 0, 0, .85)), url("backgrounds/building-background.jpeg");
+    background-image: linear-gradient(rgb(0, 0, 0, 1), rgb(0, 0, 0, .85)), url("backgrounds/building-background.jpeg");  
     background-size: cover;
     background-position: center;
 }
@@ -119,12 +120,12 @@ body {
 .container--collection {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: minmax(300px, auto)
+    grid-template-rows: minmax(300px, auto);
 }
 
 .container--collection__header {
     grid-column: 1 / 4;
-    margin: 150px 0px 0px 50px;
+    margin: 100px 0 0px 50px;
 }
 
 #new-arrivals, #designs, #shirts {
@@ -137,16 +138,92 @@ body {
 }
 
 .container--collection__newarrivals, .container--collection__designs, .container--collection__shirts {
-    margin: 100px 0px 50px 20px
+    margin: 30px 0 50px 20px;
+    grid-column: 1 / 4;
+    overflow-x: hidden;
 }
 
 .carousel__new-arrivals, .carousel__designs, .carousel__shirts {
     display: flex;
-    gap: 66px;
-    overflow-x: hidden;
+    gap: 36px;
+    pointer-events: none;
+    
 }
 
 .new-arrival__image, .designs__image, .designs__shirts {
+    width: 480px;
+    height: 650px;
+    
+}
+
+.container-streetwise {
+    grid-column: 1 / 4;
+    margin: 250px 0 100px 0;
+}
+
+.btn-follow__us {
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#background2--streetwise {
+    width: 100%;
+}
+
+#follow-us {
+    border: 2px solid black;
+    background-color: black;
+    border-radius: 100px;
+    padding: 10px 30px 10px 30px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: 'Poppins';
+    color: white;
+    position: relative;
+    top: 40px;
+    
+}
+
+.container-paragraphs {
+    grid-column: 1 / 4;
+}
+
+.paragraph1 {
+    font-family: 'Poppins';
+    font-size: 55px;
+    font-weight: 600;
+    font-style: italic;
+    color: #000;
+    line-height: 1.2em;
+    text-align: center;
+    margin: 0 10% 5% 10%;   
+}
+
+.divider {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3%;
+}
+
+#divider--paragraph {
+    height: 12px;
     width: 680px;
-    height: 900px;
+    border: solid black;
+    background-color: black;
+    border-radius: 20px;
+    opacity: 100%;
+    margin: 0;
+}
+
+.paragraph2 {
+    font-family: 'Poppins';
+    font-size: 25px;
+    font-weight: 600;
+    font-style: italic;
+    color: #000;
+    line-height: 1.6em;
+    text-align: center;
+    margin: 0px 26% 5% 26%; 
 }
