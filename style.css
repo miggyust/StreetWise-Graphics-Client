@@ -119,7 +119,7 @@ body {
 
 .container--collection {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, auto);
     grid-template-rows: minmax(300px, auto);
 }
 
@@ -153,7 +153,6 @@ body {
 .new-arrival__image, .designs__image, .designs__shirts {
     width: 480px;
     height: 650px;
-    
 }
 
 .container-streetwise {
@@ -225,5 +224,116 @@ body {
     color: #000;
     line-height: 1.6em;
     text-align: center;
-    margin: 0px 26% 5% 26%; 
+    margin: 0px 26% 8% 26%; 
+}
+
+.contact-form {
+    grid-column: 2 / 3;
+    text-align: left;
+    line-height: 1.3em;
+}
+
+.graphic--designer {
+    font-family: 'Poppins';
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 38px;
+    font-style: italic;
+    letter-spacing: 3px;
+}
+
+.worry {
+    font-family: Poppins;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-style: italic;
+    letter-spacing: 1px;
+    position: relative;
+    top: -10px;
+}
+
+.work--together {
+    font-family: 'Poppins';
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 38px;
+    font-style: italic;
+    letter-spacing: 3px;
+}
+
+.contact--form__line {
+    margin-bottom: 30px;
+    position: relative;
+    top: 30px;
+}
+
+.input--appointment {
+    position: relative;
+    left: 120px;
+    margin: 50px 0 40px 0;
+}
+
+.enterset--appointment {
+    position: relative;
+    left: 20px;
+    top: -5px;
+    letter-spacing: 2px;
+    opacity: 50%;    
+}
+
+.setappointment {
+    font-family: Poppins;
+    color: black;
+}
+
+#arrow-icon {
+    position: relative;
+    left: 30px;
+    top: 4px;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(1, auto);
+    background-color: #F59B9B;
+    margin: 100px 0 0 0;
+}
+
+.footer p {
+    color: #000;
+    text-align: left;
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-style: italic;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 8px 20px 50px;
+}
+
+.subscribe--footer {
+    grid-column: 1 / 4;
+    background-color: #000;
+    width: auto;
+}
+
+.subscription-footer--container {
+    margin: 20px 0 20px 0;
+}
+ 
+#connect--subscribe {
+    font-size: 18px;
+    color: white;
+    font-family: 'Poppins';
+    letter-spacing: 1px;
+    position: relative;
+    left: 100px;
+}
+
+#facebook--icon {
+    position: relative;
+    width: 50px;
+    top: -10px;
+    left: 50px;
 }
