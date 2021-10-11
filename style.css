@@ -9,6 +9,19 @@ html {
     scroll-behavior: smooth;
 }
 
+html::-webkit-scrollbar {
+    background-color: white;
+    width: 8px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.214);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background-color: grey
+}
+
 img {
     user-select: none;
 }
@@ -29,9 +42,173 @@ body {
 }
 
 /* navbar */
+.navbar {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+}
+
+#navbarlogo {
+    width: 90px;
+    margin: 10px;
+    filter: drop-shadow(7px 5px 4px);
+    z-index: 10;
+}
+
+#nav-streetwise {
+    font-size: 45px;
+    font-family: 'Dokdo';
+    color: white;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 10px;
+    left: 100px;
+    text-shadow: 4px 4px 5px black
+}
+
+#nav-jericho {
+    font-size: 15px;
+    font-family: 'Sigmar One';
+    color: white;
+    letter-spacing: 18px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 60px;
+    left: 100px;
+    text-shadow: 4px 4px 5px black
+}
+
+/* Hamburger menu */
+#menu {
+    width: 28px;
+    position: absolute;
+    top: 35px;
+    right: 110px;
+    cursor: pointer;
+    filter: drop-shadow(7px 5px 4px);
+}
+
+.bar {
+    height: 4px;
+    width: 100%;
+    background-color: white;
+    display: block;
+    transition: 0.3s ease; 
+}
+
+menu:hover {
+    color: grey;
+}
+
+#bar1 {
+    transform: translateY(-2px);
+    
+}
+
+#bar2 {
+    transform: translateY(1px);
+}
+
+#bar3 {
+    transform: translateY(4px);
+}
+
+#bar4 {
+    transform: translateY(7px);
+}
+
+/* WHEN CLICKED, CHANGE THE MENU BAR INTO 
+    "CLOSE" ICON */
 
 
+    /* (WHEN CLICKED) --> HAMBURGER MENU--ICON BAR */
+.alter .bar {
+    background-color: white;
+    
+}
 
+.alter #bar2, .alter #bar4 {
+    opacity: 0%;
+    transform: translateY(3px);
+}
+
+.alter #bar1 {
+    transform: translateY(2px) rotateZ(-45deg);
+    border-radius: 10px;
+}
+
+.alter #bar3 {
+    transform: translateY(-6px) rotate(45deg);
+    border-radius: 10px;
+}
+    /* END OF HAMBURGER MENU--ICON BAR */
+
+
+#contents {
+    position: absolute;
+    text-align: center;
+    position: relative;
+}
+
+.nav {
+    display: none;
+    transition: 0.3s ease;
+}
+
+.nav li {
+    color: grey;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 4em;
+    
+}
+
+.nav li a {
+    color: white;
+    font-size: 80px;
+    font-style: italic;
+    transition: .2s;
+    
+}
+
+.nav li a:hover {
+    color: yellow;
+}
+
+
+#content-menu {
+    letter-spacing: 5px;
+    font-size: 30px;
+    font-style: italic;
+}
+
+#navmenu-streetwise {
+    font-size: 45px;
+    font-family: 'Dokdo';
+    letter-spacing: 3px;
+}
+
+.menuContents{
+    display: block;
+}
+
+#menu-background {
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, .7)), url(backgrounds/background-meeting.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -4;
+    
+}
+
+.changeBackground {
+    width: 1980px;
+    height: 1020px;
+}
 
 
 /* end of navbar */
@@ -139,7 +316,7 @@ body {
 }
 
 .container--collection__newarrivals, .container--collection__designs, .container--collection__shirts {
-    margin: 30px 0 50px 20px;
+    margin: 30px 0 50px 0px;
     grid-column: 1 / 4;
     overflow-x: auto;
     align-items: center;
@@ -160,6 +337,7 @@ body {
     background-color: #fff;
     border-radius: 10px;
 }
+
 
 /* scrollbar design for new arrivals */
 .container--collection__designs::-webkit-scrollbar {
@@ -190,6 +368,7 @@ body {
     width: 680px;
     height: 850px;
     transform: scale(.9);
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -5px;
 }
 
 .container-streetwise {
@@ -329,7 +508,7 @@ body {
     top: 4px;
 }
 
-.footer {
+#footer {
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(1, auto);
@@ -337,7 +516,7 @@ body {
     margin: 100px 0 0 0;
 }
 
-.footer p {
+#footer p {
     color: #000;
     text-align: left;
     font-family: 'Poppins';
