@@ -79,6 +79,13 @@ body {
     text-shadow: 4px 4px 5px black
 }
 
+
+/*Lin Modifications*/
+a, a:hover, a:focus, a:active{
+    text-decoration: none;
+    color: inherit;
+}
+
 /* Hamburger menu */
 #menu {
     width: 28px;
