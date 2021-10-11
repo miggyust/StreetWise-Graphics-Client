@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dokdo&family=Poppins:wght@300;400;500;600;700;800&family=Sigmar+One&display=swap" rel="stylesheet">
     <title>StreetWise Graphics @official</title>
-    <!-- bootstrap link
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> -->
+    <!-- bootstrap link -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> -->
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="style.css">
     <!-- Javascript link -->
@@ -18,29 +18,42 @@
 </head>
 <body>
     <section id="welcomediv"> 
-        <!-- <nav class="navbar">
+        <!-- FOR NAVIGATION BAR -->
+        <div class="navbar">
             <img id="navbarlogo" src="logos/whitetransp.png">
-            <h1> StreetWise Graphics</h1>
-            <h2> Jericho Robles </h2>
-            <input type="checkbox" class="toggler">
-            <div class="hamburger-menu">
-                <div>
-                </div>
+            <h1 id="nav-streetwise"> StreetWise Graphics</h1>
+            <h2 id="nav-jericho"> Jericho Robles </h2>
+
+            <!-- HAMBURGER MENU ICON -->
+            <div id="menu" onclick="hamburgerMenu()">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+                <div id="bar4" class="bar"></div>
             </div>
-            <div class="menu">
-                <ul class="options">
-                    <li><a href="#">Menu</a></li>
-                    <li><a href="#">About Me</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                </ul>
-            </div>
-        </nav> -->
+
+            <!-- HAMBURGER MENU CONTENTS -->
+            <ul class ="nav" id="contents">
+                <li id="content-menu"style="color: grey;"> Menu </li>
+                <li><a href="homepage.html" onclick="designMenu()"> Designs </a></li>
+                <li><a href="#">About Me </a></li>
+                <li><a href="#"> Contact </a></li>
+                <li><a href="#"> Terms and Conditions </a></li>
+                <li><a href="#"> FAQ </a></li>
+                <li id="navmenu-streetwise"> StreetWise Graphics</li>
+                <li id="navmenu-jericho"> Jericho Robles made in Rizal, Philippines </li>
+            </ul>
+
+            <div id="menu-background"></div>
+        </div>
+
         <img id="michaelangelo1" src="michaelangelo/pictransp.png">
         <img id="michaelangelo2" src="michaelangelo/pictranspred.png">
         <img id="michaelangelo3" src="michaelangelo/pictranspwhite.png">
         <img id="classytext" src="backgrounds/imgtext.png">
+
         
+
         <h3 id="owner-jericho"> Jericho Robles </h1>
         <h1 id="streetwisecomp"> StreetWise Graphics </h1>
         <h3 id="designer-creator"> Designer and Creator</h3>
@@ -54,11 +67,11 @@
         </p>
     </section>
 
+
     <div class="container--collection">
         <div class="container--collection__header"> 
             <h1 id="new-arrivals"> New Arrivals </h1> 
         </div>
-
         <div class="container--collection__newarrivals">
             <div class="carousel__new-arrivals">
                 <div class="carousel--collection__image">
@@ -87,7 +100,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="container--collection__header"> 
             <h1 id="designs"> Designs </h1>
         </div>
@@ -154,19 +167,19 @@
         <div class="container-streetwise">
             <img id="background2--streetwise" src="backgrounds/background2.png">
             <div class="btn-follow__us">
-                <a href="#" id="follow-us"> Follow us </a>
+                <a href="#footer" id="follow-us"> Follow us </a>
             </div>
         </div>
 
         <div class="container-paragraphs">
-            <p class="paragraph1"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  </p>
+            <p class="paragraph1"> <span style="color: #fff">STREETWISE GRAPHICS </span> is the fruit of <span style="color: #fff"> JERICHO ROBLES' </span> idea, vision, and creativity. He were able to reach out and showcase the young in everyone they met, as well as favorably impact people who believe in what he do, with exceptional messages and <span style="color: #fff;"> DISTINCT CREATIVITY </span> in each item he make.  </p>
 
             <div class="divider">
                 <hr id="divider--paragraph">
             </div>
             
             <p class="paragraph2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.    
+                <span style = "color: #fff"> STREETWISE GRAPHICS </span> has never stopped pushing ahead, and have kept growing through expanding their connections for each individual and the community as a <span style="color: white;"> WHOLE. </span>
             </p>
         </div>
 
@@ -191,17 +204,17 @@
         </div>
     </div>
 
-    <section class="footer">
+    <section id="footer">
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Streetwise Graphics tends to forecast various of amazing designs which portrays deep meanings. It provides high quality and detailed designs for the purpose of executing a superb graphic designs. Throughout the designing process Streetwise Graphics is responsible for the font styles, artwork, color palettes, and other aspects for the project.
         </p>
 
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Streetwise Graphics operates within the constraints of the client's budget. This is related to time management abilities, since we must finish a project within the time limit and budget established by our client. Moreover, Streetwise Graphics reply swiftly to modification requests.
         </p>
 
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Streetwise Graphics' primary goals esignerand objectives is to create a project that is tailored to a client's specific demands. We, reach out our client to identify the project's general objective, purpose, and intended appearance before commencing the design process.
         </p>
 
         <div class="subscribe--footer">
@@ -215,12 +228,14 @@
                     <img src="logos/messengericon.png" style="margin-right: 20px; width: 55px;" id="messenger">
                     <hr id="socmed--divider">
 
-                    <h1 id="credits"> StreetWise Graphics, designed with in  <img src="logos/icon.png" style="margin:0 5px 0 5px; ">  Mateo, Rizal, Philippines </h1>
+                    <h1 id="credits"> StreetWise Graphics, designed with in  <img src="logos/icon.png" style="margin:0 5px 0 5px; "> San Mateo, Rizal, Philippines </h1>
                 </div>
                 
                 
         </div>
     </section>
+
+    
 
     <script src="app.js"> </script>
 </body>
