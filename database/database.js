@@ -12,6 +12,11 @@ const con = mysql.createConnection({
     database: "streetwisegraphics"
 });
 
+con.connect((err) => {
+    if (!err){
+       console.log("connected"); 
+    }
+});
 
 app.get("/create-SGdb", (req, res) =>{
     let sql = "CREATE DATABASE streetwisegraphics";
@@ -24,11 +29,7 @@ app.get("/create-SGdb", (req, res) =>{
     })
 })
 
-con.connect((err) => {
-    if (!err){
-       console.log("connected"); 
-    }
-});
+
 
 app.listen(PORT, () =>{
     console.log("Listening to port " + PORT);
