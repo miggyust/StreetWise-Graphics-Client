@@ -79,6 +79,12 @@ body {
     text-shadow: 4px 4px 5px black
 }
 
+/*Link Modifications*/
+a, a:hover, a:focus, a:active{
+    text-decoration: none;
+    color: inherit;
+}
+
 /* Hamburger menu */
 #menu {
     width: 28px;
@@ -121,8 +127,7 @@ menu:hover {
 /* WHEN CLICKED, CHANGE THE MENU BAR INTO 
     "CLOSE" ICON */
 
-
-    /* (WHEN CLICKED) --> HAMBURGER MENU--ICON BAR */
+/* (WHEN CLICKED) --> HAMBURGER MENU--ICON BAR */
 .alter .bar {
     background-color: white;
     
