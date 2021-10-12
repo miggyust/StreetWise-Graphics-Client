@@ -6,15 +6,16 @@ const app = express();
 
 const con = mysql.createConnection({
     host: "localhost",
-    port: 3306,
     user: "root",
-    password: "password",
+    password: "",
     database: "streetwisegraphics"
 });
 
 con.connect((err) => {
     if (!err){
        console.log("connected"); 
+    }else{
+        console.log("failed to connect to sql server");
     }
 });
 
