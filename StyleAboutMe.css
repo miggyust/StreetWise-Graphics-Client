@@ -292,8 +292,8 @@ menu:hover {
     display: grid; 
     grid-auto-columns: 1fr; 
     grid-template-columns: repeat(4, 1fr); 
-    grid-template-rows: repeat(5, auto); 
-    gap: 10px 10px; 
+    grid-template-rows: repeat(14, auto); 
+    gap: 20px 20px; 
     position: relative;
     top: 250px;
     margin: 0 50px 0 50px; 
@@ -324,26 +324,42 @@ menu:hover {
 }
 
 .container--clients__card1 {
-    grid-area: 2 / 1 / 4 / 3;
-}
-
-#pic1 {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    grid-area: 2 / 1 / 3 / 3;
 }
 
 .container--clients__card2 {
-    grid-area: 2 / 3 / 5 / 5;
+    grid-area: 2 / 3 / 4 / 5;
 }
 
-#pic2 {
+.container--clients__card3 {
+    grid-area: 3 / 1 / 6 / 3 ;
+}
+
+.container--clients__card4 {
+    grid-area: 4 / 3 / 6 / 5;
+}
+
+.container--clients__card5 {
+    grid-area: 6 / 1 / 8 / 5;
+}
+
+.container--clients__card6 {
+    grid-area: 8 / 1 / 10 / 3;
+}
+
+.container--clients__card7 {
+    grid-area: 8 / 3 / 9 / 5;
+}
+
+.container--clients__card8 {
+    grid-area: 9 / 3 / 10 / 5;
+}
+
+#pic1, #pic2, #pic3, #pic4, #pic5, #pic6, #pic7 {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
-
 
 
 
