@@ -28,12 +28,16 @@ img {
 
 body {
     overflow-x: hidden;
-    background-image: linear-gradient(rgb(0, 0, 0, 0.82), rgb(0, 0, 0, 0.82)), url(backgrounds/dusteffect2.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(backgrounds/dusteffect3.jpg);
     background-position: center;
     background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
-/* navbar */
 .navbar {
     position: fixed;
     z-index: 10;
@@ -203,3 +207,18 @@ menu:hover {
 }  
     
 /* -----END OF NAVIAGATION BAR----- */  
+
+.termsconditions__header {
+    text-align: center;
+    position: relative;
+    top: 80px;
+}
+
+#header {
+    font-size: 120px;
+    font-family: 'Poppins';
+    color: yellow;
+    font-style: italic;
+    text-transform: uppercase;
+    font-weight: 900;
+}
