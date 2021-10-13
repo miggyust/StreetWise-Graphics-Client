@@ -213,6 +213,7 @@ menu:hover {
     top: 180px;
     width: 1320px;
     height: 600px;
+    user-select: none;
 }
 
 #streetwise__background {
@@ -261,4 +262,94 @@ menu:hover {
     top: -50px;
     left: 1270px;
     letter-spacing: 80px;
+}
+
+.container__contact--info {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(6, 1fr);
+    position: relative;
+    top: 400px;
+}
+
+.get-in-touch {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+#getintouch {
+    font-size: 30px;
+    font-family: 'Poppins';
+    color: yellow;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-left: 50px;
+}
+
+#divider {
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 40px;
+    position: absolute;
+    top: 20px;
+    left: 330px;
+}
+
+.details {
+    font-size: 18px;
+    font-family: 'Poppins';
+    color: yellow;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-left: 50px;
+}
+
+.infos {
+    margin-left: 20px;
+    margin-bottom: 70px;
+    position: relative;
+    top: 40px;
+}
+
+
+.contact-info {
+    margin-left: 30px;
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+#contact, #information {
+    font-size: 40px;
+    color: white;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    font-style: italic;
+    position: relative;
+    letter-spacing: 4px;
+}
+
+#information {
+    margin-left: 30px;
+}
+
+#line {
+    background-color: white;
+    border: 4px solid white;
+    width: 150px;
+    border-radius: 20px;
+    position: relative;
+    top: -90px;
+    left: 300px;
+}
+
+.paragraph__contact-info {
+    font-size: 24px;
+    color: white;
+    font-family: 'Poppins';
+    text-align: justify;
+    width: 380px;
+    position: relative;
+    left: 110px;
+    font-weight: 600;
 }
