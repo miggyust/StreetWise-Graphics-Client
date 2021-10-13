@@ -12,40 +12,45 @@
     <link rel="stylesheet" type="text/css" href="contact.css">
 </head>
 <body>
-    <!-- FOR NAVIGATION BAR -->
-    <div class="navbar">
-        <a href="#"><img id="navbarlogo" src="logos/whitetransp.png"></a>
-        <a href="#"><h1 id="nav-streetwise"> StreetWise Graphics</h1></a>
-        <a href="#"><h2 id="nav-jericho"> Jericho Robles </h2></a>
+    <section id="welcomediv"> 
+        <!-- FOR NAVIGATION BAR -->
+        <div class="navbar">
+            <a href="#"><img id="navbarlogo" src="logos/whitetransp.png"></a>
+            <a href="#"><h1 id="nav-streetwise"> StreetWise Graphics</h1></a>
+            <a href="#"><h2 id="nav-jericho"> Jericho Robles </h2></a>
+            
+            <!-- HAMBURGER MENU ICON -->
+            <div id="menu" onclick="hamburgerMenu()">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+                <div id="bar4" class="bar"></div>
+            </div>
 
-        <!-- HAMBURGER MENU ICON -->
-        <div id="menu" onclick="hamburgerMenu()">
-            <div id="bar1" class="bar"></div>
-            <div id="bar2" class="bar"></div>
-            <div id="bar3" class="bar"></div>
-            <div id="bar4" class="bar"></div>
+            <!-- HAMBURGER MENU CONTENTS -->
+            <ul class ="nav" id="contents">
+                <li id="content-menu"style="color: grey;"> Menu </li>
+                <li><a href="homepage.html" onclick="designMenu()"> Designs </a></li>
+                <li><a href="AboutMe.html">About Me </a></li>
+                <li><a href="contact.html"> Contact </a></li>
+                <li><a href="Terms&Conditions.html"> Terms and Conditions </a></li>
+                <li id="navmenu-streetwise"> StreetWise Graphics</li>
+            </ul>
+            <!-- end of HAMBURGER MENU CONTENTS -->
+
+            <div id="menu-background"></div>
         </div>
 
-        <!-- HAMBURGER MENU CONTENTS -->
-        <ul class ="nav" id="contents">
-            <li id="content-menu"style="color: grey;"> Menu </li>
-            <li><a href="homepage.html" onclick="designMenu()"> Designs </a></li>
-            <li><a href="AboutMe.html">About Me </a></li>
-            <li><a href="contact.html"> Contact </a></li>
-            <li><a href="Terms&Conditions.html"> Terms and Conditions </a></li>
-            <li id="navmenu-streetwise"> StreetWise Graphics</li>
-        </ul>
-        <!-- end of HAMBURGER MENU CONTENTS -->
-
-        <div id="menu-background"></div>
+        <div class="termsconditions__header">
+            <h1 id="header"> Termssss & Conditions: </h1> 
+        </div>
+        
 
 
 
 
 
-
-
-        <!-- Javascript link -->
-        <script src="app.js"> </script>
+    <!-- Javascript link -->
+    <script src="app.js"> </script>
 </body>
 </html>
