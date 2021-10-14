@@ -3,6 +3,8 @@
     PAST DATES.
 */
 
+const { text } = require("body-parser");
+
 var date = new Date();
 var presentMonth = date.getMonth() + 1;
     if(presentMonth < 10) {
@@ -18,12 +20,17 @@ var year = date.getUTCFullYear();
 var currentDate = year + "-" + presentMonth + "-" + presentDay;
 document.getElementById("selectdate").setAttribute("min", currentDate);
 
+
 function validate() {
     let firstName = document.getElementById("firstname").value;
-    let lastName = document.getElementById("lastname").value
-    let phoneNumber = document.getElementById("phonenum").value;
-    let email = document.getElementById("mail").value;
+    let lastName = document.getElementById("lastname").value;
+    let email = document.getElementById("mail").value; 
 
-    
+    if(firstName.length <= 2 || lastName.length <= 1) {
+        alert("Please enter a valid name...");
+    } 
 
+    if(email.indexOf("@") == -1 || email.length < 6) {
+        alert("Please enter a valid e-mail...")
+    }
 }
