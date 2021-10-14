@@ -109,7 +109,7 @@
                     <div class="row__info">
                         <div class="phone__info">
                             <h1 class="userinfo" id="firstname"> Phone number: </h1>
-                            <input class="input__info" type="text" placeholder="Enter your mobile number">
+                            <input class="input__info" pattern="[0-9]" type="text" placeholder="Enter your mobile number">
                             <hr class="divider__info">
                         </div>
 
@@ -123,15 +123,69 @@
 
                 <div class="platform__used">
                     <h1 id="platform"> Platform to be used </h1>
-                    <input id="dropdown__platform">
+                    <select id="lists">
+                        <option value="Phone call" selected disabled>  </option>
+                        <option value="Phone call"> Phone Call </option>
+                        <option value="Zoom"> Zoom </option>
+                        <option value="Google Meet"> Google Meet </option>
+                        <option value="Discord"> Discord </option>
+                        <option value="Others"> Others </option>
+                    </select>
                 </div>
 
-                <!--  -->
+                <div class="message__info">
+                    <h1 id="message"> Message </h1>
+                    <textarea class="input__info--message" cols="100" placeholder="Leave me a short message"></textarea>
+                </div>
+
+                <div class="send__message">
+                        
+                    <button id="send">
+                        <svg id="mail-icon" xmlns="http://www.w3.org/2000/svg" width="36.174" height="28.818" viewBox="0 0 36.174 28.818">
+                            <path id="ic_markunread_24px" d="M34.557,4H5.617a3.6,3.6,0,0,0-3.6,3.6L2,29.216a3.62,3.62,0,0,0,3.617,3.6H34.557a3.62,3.62,0,0,0,3.617-3.6V7.6A3.62,3.62,0,0,0,34.557,4Zm0,7.2L20.087,20.21,5.617,11.2V7.6l14.47,9.006L34.557,7.6Z" transform="translate(-2 -4)" fill="#fff" opacity="0.5"/>
+                          </svg>
+                        Send Message </button>
+                    <hr id="send__divider">
+                </div>
             </div>
         </form>
         
     </div>
     
+    <section id="footer">
+        <p>
+            Streetwise Graphics tends to forecast various of amazing designs which portrays deep meanings. It provides high quality and detailed designs for the purpose of executing a superb graphic designs. Throughout the designing process Streetwise Graphics is responsible for the font styles, artwork, color palettes, and other aspects for the project.
+        </p>
+
+        <p>
+            Streetwise Graphics operates within the constraints of the client's budget. This is related to time management abilities, since we must finish a project within the time limit and budget established by our client. Moreover, Streetwise Graphics reply swiftly to modification requests.
+        </p>
+
+        <p>
+            Streetwise Graphics' primary goals esignerand objectives is to create a project that is tailored to a client's specific demands. We, reach out our client to identify the project's general objective, purpose, and intended appearance before commencing the design process.
+        </p>
+
+        <div class="subscribe--footer">
+            <h1 id="connect--subscribe"> Connect With Us </h1>
+
+        <!-- icons -->
+        <div class="socmed-icons">
+            <a href = "https://www.facebook.com/StreetwiseGraphics" target="_blank">
+                <img src="logos/facebookicon.png" style="margin-right: 10px; width: 55px;"id="facebook">
+                </a>
+                <a href = "https://www.instagram.com/streetwisegraphics" target="_blank">
+                <img src="logos/instagramicon.png"style="margin-right: 10px; width: 55px;"id="instagram">
+                </a>
+                <a href = "https://www.facebook.com/messages/t/105775774537291" target="_blank">
+                <img src="logos/messengericon.png" style="width: 55px;" id="messenger">
+                </a>
+                <hr id="socmed--divider">
+
+                <h1 id="credits"> StreetWise Graphics, designed within the <img src="logos/icon.png" style="filter: invert(100%);margin:0 5px 0 5px; "> of San Mateo, Rizal, Philippines </h1>
+            </div>
+            
+    </div>
+    </section>
 
 
 
