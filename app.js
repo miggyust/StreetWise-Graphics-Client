@@ -1,13 +1,3 @@
-/*
-    FUNCTION FOR OPPENING AND CLOSING THE HAMBURGER MENU.
-*/
-
-function hamburgerMenu() {
-    document.getElementById("menu").classList.toggle("alter");
-    document.getElementById("contents").classList.toggle("menuContents");
-    document.getElementById("menu-background").classList.toggle("changeBackground");
-}
-
 
 /*  FOR THE DESIGNS, NEW ARRIVALS AND SHIRTS DRAGABBLE IMAGE SLIDER AND 
     THE CURSOR WILL CHANGE WHEN BEING DRAGGED.
@@ -105,3 +95,7 @@ sliderShirts.addEventListener('mousemove', (e) =>{
     const scroll = (x - startX) * 1;
     sliderShirts.scrollLeft = scrollLeft - scroll;
 });
+
+
+
+
