@@ -43,11 +43,10 @@
         <div class="container">
             <div class="container--image">
                 <img src="backgrounds/contactinfobackground.png" id="streetwise__background">
-
-                <p class="text" id="first__text"> lwtt </p>
-                <p class="text" id="second__text"> eooh </p>
-                <p class="text" id="third__text"> <span style="position: absolute; top: -1px; left:31px">'</span>trge </p>
-                <p class="text" id="fourth__text"> s<span style="color:white">k</span>er </p>
+                <p class="text" id="first__text"> <span style="color: white">lw</span>tt </p>
+                <p class="text" id="second__text">  <span style="color: white">eo</span>oh </p>
+                <p class="text" id="third__text"> <span style="position: absolute; top: -1px; left:31px; color: white">'</span><span style="color: white">tr</span>ge </p>
+                <p class="text" id="fourth__text"><span style="color:white">sk</span>er </p>
             </div>
         </div>
         
@@ -75,16 +74,71 @@
             </p>
         </div>
 
-        <div class="form__contact-info">
-            
-        </div>
-    </div>
+        <form action="#" method="post"> 
+            <div class="form__contact-info">
+                <div class="paragraph1__contact-info">
+                    <p id="paragraph1-contact"> 
+                        Got a project? Drop me a line if you 
+                        want to work together on something exciting. Big or small.
+                    </p>
+    
+                    <div class="input__name">
+                        <div class="row__info">
+                            <div class="firstname__info">
+                                <h1 class="userinfo" id="firstname"> First Name: </h1>
+                                <input class="input__info" type="text" placeholder="Enter your first name">
+                                <hr class="divider__info">
+                            </div>
+    
+                            <div class="lastname__info">
+                                <h1 class="userinfo"  id="lastname"> Last Name: </h1>
+                                <input class="input__info" type="text" placeholder="Enter your last name">
+                                <hr class="divider__info">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="date-requested">
+                    <h1 id="dateandtime"> Date & time </h1>
+                    <input id="selectdate" type="date">
+                </div>
+
+                <div class="input__info2">
+                    <div class="row__info">
+                        <div class="phone__info">
+                            <h1 class="userinfo" id="firstname"> Phone number: </h1>
+                            <input class="input__info" type="text" placeholder="Enter your mobile number">
+                            <hr class="divider__info">
+                        </div>
+
+                        <div class="emailaddress__info">
+                            <h1 class="userinfo"  id="lastname"> Email: </h1>
+                            <input class="input__info" type="text" placeholder="example@mail.com">
+                            <hr class="divider__info">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="platform__used">
+                    <h1 id="platform"> Platform to be used </h1>
+                    <input id="dropdown__platform">
+                </div>
+
+                <!--  -->
+            </div>
+        </form>
         
+    </div>
+    
+
 
 
     
 
     <!-- Javascript link -->
-    <script src="app.js"> </script>
+    <script src="hamburgermenu.js"></script>
+    <script src="datevalidation.js"> </script>
 </body>
 </html>
