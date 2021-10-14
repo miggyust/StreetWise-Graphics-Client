@@ -17,3 +17,13 @@ var presentMonth = date.getMonth() + 1;
 var year = date.getUTCFullYear();
 var currentDate = year + "-" + presentMonth + "-" + presentDay;
 document.getElementById("selectdate").setAttribute("min", currentDate);
+
+function validate() {
+    let firstName = document.getElementById("firstname").value;
+    let lastName = document.getElementById("lastname").value
+    let phoneNumber = document.getElementById("phonenum").value;
+    let email = document.getElementById("mail").value;
+
+    
+
+}
