@@ -31,6 +31,6 @@ function validate() {
     } 
 
     if(email.indexOf("@") == -1 || email.length < 6) {
-        alert("Please enter a valid e-mail...")
+        alert("Please enter a valid e-mail...");
     }
 }
