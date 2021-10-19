@@ -30,22 +30,33 @@ con.connect((err) => {
 app.post("/create", (req,res) => {
     const firstname =  req.body.firstname //name from the html
     const lastname = req.body.lastname  
-    const selectdate = req.body.selectdate 
-    const selecttime = req.body.selecttime
+    const date = req.body.selectdate 
+    const time = req.body.selecttime
     const phonenum = req.body.phonenum 
     const mail = req.body.mail
     const platform = req.body.platform 
     const message = req.body.message
 
-    const queryString = "INSERT INTO test (firstname, lastname, selectdate, selecttime, phonenum, mail, platform, message) VALUES(?, ?, ?, ?, ?, ?, ?, ?)"
-    con.query(queryString, [firstname,lastname,selectdate,selecttime,phonenum,mail,platform,message],(err, results, fields)=>{
+    
+    const queryString1 = "INSERT INTO customers (First_Name, Last_Name, Phone_Number, Customer_Email) VALUES (?,?,?,?)"
+    const queryString2 = "INSERT INTO appointment (Date,Time,Platform,Message,Customer_ID) VALUES (?,?,?,?,?)"
+    
+    con.query(queryString1, [firstname,lastname,phonenum,mail],(err, results, fields)=>{
         if (err){
             console.log("Failed to insert" + err)
-            res.sendStatus(500)
-            return
         }
-        res.end("Data Saved Succesfully");
+        console.log("User added");
     })
+
+    con.query(queryString2, [date,time,platform,message,null],(err, results, fields)=>{
+        if (err){
+            console.log("Failed to insert" + err)
+        }
+        res.end("Message Sent Succesfully");
+    })
+    
+    let sql = "UPDATE appointment SET Customer_ID =''"
+
     con.end();
 })
 
