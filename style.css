@@ -377,12 +377,6 @@ menu:hover {
     transition: 0.3s ease;
 }
 
-/* ------ IMAGE HOVER ------ */
-
-.designs__image:hover {
-    
-}
-
 .container-streetwise {
     grid-column: 1 / 4;
     margin: 250px 0 100px 0;
