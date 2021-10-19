@@ -54,8 +54,6 @@ app.post("/create", (req,res) => {
         }
         res.end("Message Sent Succesfully");
     })
-    
-    let sql = "UPDATE appointment SET Customer_ID =''"
 
     con.end();
 })
