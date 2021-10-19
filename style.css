@@ -288,16 +288,16 @@ menu:hover {
 
 .introduce {
     color: #fff;    
-    width: 920px;
+    width: 820px;
     text-align: right;
     font-size: 32px;
     line-height: 2.9rem;
-    font-weight: 600;
+    font-weight: 700;
     font-style: italic;
     font-family: 'Poppins';
     position: absolute;
     top: 390px;
-    left: 80px;
+    left: 190px;
 }
 
 .container--collection {
