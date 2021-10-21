@@ -1,38 +1,15 @@
-const express = require("express");
-const mysql = require("mysql2");
+const express = require("express")
+const mysql = require("mysql2")
+const router = express.Router()
 
-const PORT = process.env.PORT || 3000;
-const app = express();
-
-const router = require("./routes/customer.js")
-
-app.use(express.static('../'))
-app.use(express.json());
-app.use(express.urlencoded({
-  extended: true
-}));
-/*
 const con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
     database: "streetwisegraphics"
 });
-*/
 
-/*
-con.connect((err) => {
-    if (!err){
-       
-       console.log("connected"); 
-    }else{
-        console.log("failed to connect");
-    }
-});
-*/
-app.use(router)
-/*
-app.post("/create", (req,res) => {
+router.post("/create", (req,res) => {
     const firstname =  req.body.firstname //name from the html
     const lastname = req.body.lastname  
     const date = req.body.selectdate 
@@ -63,7 +40,7 @@ app.post("/create", (req,res) => {
     con.end();
 })
 
-app.get("/create-SGdb", (req, res) =>{
+router.get("/create-SGdb", (req, res) =>{
     let sql = "CREATE DATABASE streetwisegraphics";
     con.query(sql, (err, result) => {
         if(!err){
@@ -74,7 +51,4 @@ app.get("/create-SGdb", (req, res) =>{
     })
 })
 
-*/
-app.listen(PORT, () =>{
-    console.log("Listening to port " + PORT);
-});
+module.exports = router;
