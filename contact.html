@@ -86,13 +86,13 @@
                         <div class="row__info">
                             <div class="firstname__info">
                                 <h1 class="userinfo"> First Name: </h1>
-                                <input id="firstname" class="input__info" pattern="[A-Za-z ]+" type="text" placeholder="Enter your first name">
+                                <input name="firstname" id="firstname" class="input__info" pattern="[A-Za-z ]+" type="text" placeholder="Enter your first name">
                                 <hr class="divider__info">
                             </div>
 
                             <div class="lastname__info">
                                 <h1 class="userinfo"> Last Name: </h1>
-                                <input  id="lastname" class="input__info" pattern="[A-Za-z ]+" type="text" placeholder="Enter your last name">
+                                <input name="lastname" id="lastname" class="input__info" pattern="[A-Za-z ]+" type="text" placeholder="Enter your last name">
                                 <hr class="divider__info">
                             </div>
                         </div>
@@ -102,21 +102,21 @@
 
                 <div class="date-requested">
                     <h1 id="dateandtime"> Date & time </h1>
-                    <input id="selectdate" type="date">
-                    <input id="selectdate" type="time">
+                    <input name="selectdate" id="selectdate" type="date">
+                    <input name="selecttime" id="selectdate" type="time">
                 </div>
 
                 <div class="input__info2">
                     <div class="row__info">
                         <div class="phone__info">
                             <h1 class="userinfo"> Phone number: </h1>
-                            <input id="phonenum" class="input__info" pattern="[0-9]{11}" type="text" placeholder="Enter your mobile number" maxlength="11">
+                            <input name="phonenum" id="phonenum" class="input__info" pattern="[0-9]{11}" type="text" placeholder="Enter your mobile number" maxlength="11">
                             <hr class="divider__info">
                         </div>
 
                         <div class="emailaddress__info">
                             <h1 class="userinfo"> Email: </h1>
-                            <input  id="mail" class="input__info" type="text" placeholder="example@mail.com">
+                            <input name="mail" id="mail" class="input__info" type="text" placeholder="example@mail.com">
                             <hr class="divider__info">
                         </div>
                     </div>
@@ -124,7 +124,7 @@
 
                 <div class="platform__used">
                     <h1 id="platform"> Platform to be used </h1>
-                    <select id="lists">
+                    <select name="platform" id="lists">
                         <option value="Phone call" selected disabled>  </option>
                         <option value="Phone call"> Phone Call </option>
                         <option value="Zoom"> Zoom </option>
@@ -136,7 +136,7 @@
 
                 <div class="message__info">
                     <h1 id="message"> Message </h1>
-                    <textarea class="input__info--message" cols="100" placeholder="Leave me a short message"></textarea>
+                    <textarea name="message" class="input__info--message" cols="100" placeholder="Leave me a short message"></textarea>
                 </div>
 
                 <div class="send__message">
