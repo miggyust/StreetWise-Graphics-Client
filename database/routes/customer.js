@@ -43,4 +43,15 @@ router.get("/create-SGdb", (req, res) =>{
     })
 })
 
+router.get("/create-appointment",(req,res) => {
+    let sql = "CREATE TABLE appointment (Appointment_ID int AUTO_INCREMENT, Date date, Time time, Platform varchar(50), Message varchar(50), First_Name varchar(50), Last_Name varchar(50), Phone_Number varchar(50), Customer_Email varchar(50), PRIMARY KEY(Appointment_ID))"
+    con.query(sql, (err, result) => {
+        if(!err){
+            res.send("successfully created appointment table");
+        }else{
+            res.send("failed to appointment table");
+        }
+    })
+});
+
 module.exports = router;
