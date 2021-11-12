@@ -6,7 +6,8 @@ const con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "streetwisegraphics"
+    database: "streetwisegraphics",
+    port: 5000
 });
 
 router.post("/create", (req,res) => {
@@ -20,17 +21,9 @@ router.post("/create", (req,res) => {
     const message = req.body.message
 
     
-    const queryString1 = "INSERT INTO customers (First_Name, Last_Name, Phone_Number, Customer_Email) VALUES (?,?,?,?)"
-    const queryString2 = "INSERT INTO appointment (Date,Time,Platform,Message,Customer_ID) VALUES (?,?,?,?,?)"
-    
-    con.query(queryString1, [firstname,lastname,phonenum,mail],(err, results, fields)=>{
-        if (err){
-            console.log("Failed to insert" + err)
-        }
-        console.log("User added");
-    })
+    const queryString = "INSERT INTO appointment (Date,Time,Platform,Message,First_Name, Last_Name, Phone_Number, Customer_Email) VALUES (?,?,?,?,?,?,?,?)"
 
-    con.query(queryString2, [date,time,platform,message,null],(err, results, fields)=>{
+    con.query(queryString, [date,time,platform,message,firstname,lastname,phonenum,mail],(err, results, fields)=>{
         if (err){
             console.log("Failed to insert" + err)
         }
@@ -50,5 +43,16 @@ router.get("/create-SGdb", (req, res) =>{
         }
     })
 })
+
+router.get("/create-appointment",(req,res) => {
+    let sql = "CREATE TABLE appointment (Appointment_ID int AUTO_INCREMENT, Date date, Time time, Platform varchar(50), Message varchar(50), First_Name varchar(50), Last_Name varchar(50), Phone_Number varchar(50), Customer_Email varchar(50), PRIMARY KEY(Appointment_ID))"
+    con.query(sql, (err, result) => {
+        if(!err){
+            res.send("successfully created appointment table");
+        }else{
+            res.send("failed to appointment table");
+        }
+    })
+});
 
 module.exports = router;
