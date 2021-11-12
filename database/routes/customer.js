@@ -6,7 +6,6 @@ const con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    port: 3306,
     database: "streetwisegraphics"
 });
 
@@ -21,17 +20,9 @@ router.post("/create", (req,res) => {
     const message = req.body.message
 
     
-    const queryString1 = "INSERT INTO customers (First_Name, Last_Name, Phone_Number, Customer_Email) VALUES (?,?,?,?)"
-    const queryString2 = "INSERT INTO appointment (Date,Time,Platform,Message,Customer_ID) VALUES (?,?,?,?,?)"
-    
-    con.query(queryString1, [firstname,lastname,phonenum,mail],(err, results, fields)=>{
-        if (err){
-            console.log("Failed to insert" + err)
-        }
-        console.log("User added");
-    })
+    const queryString = "INSERT INTO appointment (Date,Time,Platform,Message,First_Name, Last_Name, Phone_Number, Customer_Email) VALUES (?,?,?,?,?,?,?,?)"
 
-    con.query(queryString2, [date,time,platform,message,null],(err, results, fields)=>{
+    con.query(queryString, [date,time,platform,message,firstname,lastname,phonenum,mail],(err, results, fields)=>{
         if (err){
             console.log("Failed to insert" + err)
         }
