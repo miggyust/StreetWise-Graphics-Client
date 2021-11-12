@@ -6,7 +6,8 @@ const con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "streetwisegraphics"
+    database: "streetwisegraphics",
+    port: 5000
 });
 
 router.post("/create", (req,res) => {
