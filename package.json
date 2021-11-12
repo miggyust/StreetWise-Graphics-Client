@@ -1,0 +1,25 @@
+{
+  "name": "streetwise-graphics-client-1",
+  "version": "1.0.0",
+  "description": "Client's website",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jolouste/StreetWise-Graphics-Client.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jolouste/StreetWise-Graphics-Client/issues"
+  },
+  "homepage": "https://github.com/jolouste/StreetWise-Graphics-Client#readme"
+}
