@@ -1,17 +1,21 @@
 const url = require('url');
 const fs = require('fs');
-
-
 const express = require('express');
 const app = express();
 
-app.use(express.static(__dirname + "../"))
-app.use(express.json());
-app.use(express.urlencoded({
-  extended: true
-}));
-
-
+app.use(express.static(__dirname));
+app.get("/contact", function(req,res){
+    res.sendFile(__dirname + "/contact.html");
+})
+app.get("/homepage", function(req,res){
+    res.sendFile(__dirname + "/homepage.html");
+})
+app.get("/termsandconditions", function(req,res){
+    res.sendFile(__dirname + "/Terms&Conditions.html");
+})
+app.get("/about", function(req,res){
+    res.sendFile(__dirname + "/AboutMe.html");
+})
 
 function renderHTML(path,response){
 
@@ -26,25 +30,10 @@ response.end();
     });
 }
 
-module.exports ={
-    handleRequest: function (request, response){
-        response.writeHead(200,{'Content-Type': 'text/html'});
-        
-        const path = url.parse(request.url).pathname;
-        switch (path){
-            case'/homepage':
-                renderHTML('./homepage.html',response);
-                break;
-            case'/contact':
-            renderHTML('./contact.html',response);
-        
-            break;
-        m
-            default:
-                response.writeHead(404);
-                response.write('Route not defined');
-                response.end();
-        }
-        }
-}
-a
+app.listen(3000,(err)=>{
+    if(!err){
+        console.log("application connected to port 3000...");
+    }else{
+        console.log("failed to connect to port 3000");
+    }
+})
