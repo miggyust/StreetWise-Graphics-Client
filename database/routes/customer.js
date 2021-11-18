@@ -1,13 +1,13 @@
 const express = require("express")
 const mysql = require("mysql2")
 const router = express.Router()
+const nodemailer = require("nodemailer");
 
 const con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
     database: "streetwisegraphics",
-    port: 5000
 });
 
 router.post("/create", (req,res) => {
@@ -20,6 +20,42 @@ router.post("/create", (req,res) => {
     const platform = req.body.platform 
     const message = req.body.message
 
+    const output = `
+    <p><b>First Name: </b> ${firstname}</p>
+    <p><b>Last Name: </b> ${lastname}</p>
+    <p><b>Date: </b> ${date} </p>
+    <p><b>Time: </b> ${time} </p>
+    <p><b>Phone Number: </b> ${phonenum} </p>
+    <p><b>Platform: </b> ${platform} </p>
+    <p><b>Message: </b> ${message}</p>`
+
+    let transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth:{
+            user:"rhuimidagreat@gmail.com", //need to be replaced with streetwisegraphics gmail and turn on allow less secure apps
+            pass:"111901rho"
+        },
+        tls: {
+            rejectUnauthorized: false
+        }
+    })
+
+    let mailOptions = {
+        from:"rhuimidagreat@gmail.com", //need to be replaced with streetwisegraphics gmail and turn on allow less secure apps
+        to: mail,
+        //secondary(optional or put owner's email) cc: "alversadel@gmail.com",
+        subject: "Appointment Details from Streetwise Graphics",
+        text: "Appointment Details",
+        html:output
+    } 
+
+    transporter.sendMail(mailOptions, function(err, success){
+        if (err){
+            console.log(err)
+        }else
+            console.log("email sent succesfuly")
+        
+    })
     
     const queryString = "INSERT INTO appointment (Date,Time,Platform,Message,First_Name, Last_Name, Phone_Number, Customer_Email) VALUES (?,?,?,?,?,?,?,?)"
 
