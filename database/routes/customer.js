@@ -63,10 +63,8 @@ router.post("/create", (req,res) => {
         if (err){
             console.log("Failed to insert" + err)
         }
-        res.end("Message Sent Succesfully");
+        res.send("Message Sent Succesfully");
     })
-
-    con.end();
 })
 
 router.get("/create-SGdb", (req, res) =>{
