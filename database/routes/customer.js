@@ -32,7 +32,7 @@ router.post("/create", (req,res) => {
     let transporter = nodemailer.createTransport({
         service: "gmail",
         auth:{
-            user:"streetwisegraphicsofficial@gmail.com", //need to be replaced with streetwisegraphics gmail and turn on allow less secure apps
+            user:"streetwisegraphicsofficial@gmail.com", 
             pass:"streetwisegraphics"
         },
         tls: {
@@ -41,7 +41,7 @@ router.post("/create", (req,res) => {
     })
 
     let mailOptions = {
-        from:"streetwisegraphicsofficial@gmail.com", //need to be replaced with streetwisegraphics gmail and turn on allow less secure apps
+        from:"streetwisegraphicsofficial@gmail.com", 
         to: mail,
         //secondary(optional or put owner's email) cc: "alversadel@gmail.com",
         subject: "Appointment Details from Streetwise Graphics",
