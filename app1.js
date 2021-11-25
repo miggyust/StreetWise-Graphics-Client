@@ -13,9 +13,6 @@ app.use(express.urlencoded({
 
 app.use(router)
 
-app.get("/", function(req,res){
-  res.send("/homepage.html");
-})
 app.listen(PORT, () =>{
     console.log("Listening to port " + PORT);
 });
