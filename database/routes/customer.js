@@ -13,7 +13,7 @@ const pool = mysql.createPool({
 });
 
 pool.getConnection(function(err, connection) {
-    console.log("pool get connection");
+    return pool;
   });
 
 router.post("/create", (req,res) => {
