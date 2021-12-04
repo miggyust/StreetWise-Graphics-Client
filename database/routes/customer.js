@@ -4,10 +4,10 @@ const router = express.Router()
 const nodemailer = require("nodemailer");
 
 const con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "streetwisegraphics",
+    host: "us-cdbr-east-04.cleardb.com",
+    user: "ba4ebefdbbaee2",
+    password: "9d45ece4",
+    database: "heroku_670d6f6d8482b89",
 });
 
 router.post("/create", (req,res) => {
