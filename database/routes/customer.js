@@ -30,7 +30,7 @@ router.post("/create", (req,res) => {
     <p><b>Phone Number: </b> ${phonenum} </p>
     <p><b>Platform: </b> ${platform} </p>
     <p><b>Message: </b> ${message}</p>
-    <br>
+    
     <p><b>Please wait for the response in the form of email or text messages from Jericho Robles, owner of Streetwise Graphics</b></p>
     <p><b>for the confirmation of the appointment as he might have other schedules or not available.</b></p>
     <p><b>Thank you for your patience and have a good day</b></p>
