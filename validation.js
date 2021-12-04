@@ -34,3 +34,5 @@ function validate() {
         alert("Please enter a valid e-mail...");
     }
 }
+
+module.exports = validate;
