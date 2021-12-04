@@ -68,7 +68,7 @@ router.post("/create", (req,res) => {
         if (err){
             console.log("Failed to insert" + err)
         }
-        res.send("Message Sent Succesfully");
+        res.alert("Message sent succesfully");
     })
 })
 
