@@ -323,46 +323,8 @@ menu:hover {
 .container--collection__newarrivals, .container--collection__designs, .container--collection__shirts {
     margin: 30px 0 50px 0px;
     grid-column: 1 / 4;
-    overflow-x: auto;
+    overflow-x: hidden;
     align-items: center;
-}
-
-.container--collection__newarrivals::-webkit-scrollbar {
-    height: 14px;
-    width: 2px;
-}   
-
-/* scrollbar designs for newarrivals */
-.container--collection__newarrivals::-webkit-scrollbar {
-    height: 14px;
-    width: 2px;
-}   
-
-.container--collection__newarrivals::-webkit-scrollbar-thumb {
-    background-color: #fff;
-    border-radius: 10px;
-}
-
-
-/* scrollbar design for new arrivals */
-.container--collection__designs::-webkit-scrollbar {
-    height: 14px;
-    width: 2px;
-}   
-
-.container--collection__designs::-webkit-scrollbar-thumb {
-    background-color: #fff;
-    border-radius: 10px;
-}
-
-/* scrollbar design for tshirt */
-.container--collection__shirts::-webkit-scrollbar {
-    height: 14px;
-    width: 2px;
-}   
-.container--collection__shirts::-webkit-scrollbar-thumb {
-    background-color: #fff;
-    border-radius: 10px;
 }
 
 .carousel__new-arrivals, .carousel__designs, .carousel__shirts {
