@@ -12,14 +12,13 @@ const pool = mysql.createPool({
     database: "heroku_670d6f6d8482b89",
 });
 
-pool.getConnection(function(err, connection) {
-    pool.query(sql, (err, result) => {
-        if(!err){
-            console.log("successfully connected");
-        }else{
-            console.log("failed to connect");
-        }
-});
+pool.getConnection((err, connection) => {
+    if (err) {
+      reject(err);
+    } else {
+      resolve(connection);
+    }
+  });
 
 router.post("/create", (req,res) => {
     const firstname =  req.body.firstname //name from the html
