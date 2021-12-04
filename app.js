@@ -1,4 +1,4 @@
-const url = require('url');
+/*const url = require('url');
 const fs = require('fs');
 const express = require('express');
 const app = express();
@@ -36,4 +36,5 @@ app.listen(3000,(err)=>{
     }else{
         console.log("failed to connect to port 3000");
     }
-})
+})*/
+//not needed
