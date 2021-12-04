@@ -1,9 +1,10 @@
+//import
 const express = require("express")
 const mysql = require("mysql2")
 const router = express.Router()
 const nodemailer = require("nodemailer");
 
-
+//create a database connection
 const pool = mysql.createPool({
     connectionLimit: 10,
     host: "us-cdbr-east-04.cleardb.com",
@@ -11,11 +12,12 @@ const pool = mysql.createPool({
     password: "9d45ece4",
     database: "heroku_670d6f6d8482b89",
 });
-
+//get connection from pool
 pool.getConnection(function(err, connection) {
-  console.log("connected")
-});
-
+    console.log("connected");
+    connection.release();
+  });
+//post method when submitting a form
 router.post("/create", (req,res) => {
     const firstname =  req.body.firstname //name from the html
     const lastname = req.body.lastname  
@@ -26,7 +28,7 @@ router.post("/create", (req,res) => {
     const platform = req.body.platform 
     const message = req.body.message
 
-    //output html can be improved for confirmation
+//output html for Email
     const output = `
     <p><b>First Name: </b> ${firstname}</p>
     <p><b>Last Name: </b> ${lastname}</p>
@@ -40,7 +42,7 @@ router.post("/create", (req,res) => {
     <p><b>for the confirmation of the appointment as he might have other schedules or not available.</b></p>
     <p><b>Thank you for your patience and have a good day</b></p>
     <p><b>This is an auto generated email please do not reply.</b></p>`
-
+//Transporter for Emails
     let transporter = nodemailer.createTransport({
         service: "gmail",
         auth:{
@@ -55,7 +57,7 @@ router.post("/create", (req,res) => {
     let mailOptions = {
         from:"streetwisegraphicsofficial@gmail.com", 
         to: mail,
-        //secondary(optional or put owner's email) cc: "alversadel@gmail.com",
+        //(optional or put owner's email) cc: "jerichorobles@gmail.com",
         subject: "Confirmation of Appointment Details from Streetwise Graphics",
         text: "Appointment Details",
         html:output
@@ -65,20 +67,21 @@ router.post("/create", (req,res) => {
         if (err){
             console.log(err)
         }else
-            console.log("email sent succesfuly")
+            console.log("email sent succesfully")
         
     })
-    
+
+//Inserting Data
     const queryString = "INSERT INTO appointment (Date,Time,Platform,Message,First_Name, Last_Name, Phone_Number, Customer_Email) VALUES (?,?,?,?,?,?,?,?)"
 
     pool.query(queryString, [date,time,platform,message,firstname,lastname,phonenum,mail],(err, results, fields)=>{
         if (err){
-            console.log("Failed to insert" + err)
+            console.log("Failed to insert")
         }
         res.send("Message sent successfully");
     })
 })
-
+//local testing
 router.get("/create-SGdb", (req, res) =>{
     let sql = "CREATE DATABASE streetwisegraphics";
     pool.query(sql, (err, result) => {
@@ -96,14 +99,10 @@ router.get("/create-appointment",(req,res) => {
         if(!err){
             res.send("successfully created appointment table");
         }else{
-            res.send("failed to appointment table");
+            res.send("failed to create appointments table");
         }
     })
 });
-pool.end(function(err) {
-    if (err) {
-      return console.log(err.message);
-    }
-  });
+
 
 module.exports = router;
