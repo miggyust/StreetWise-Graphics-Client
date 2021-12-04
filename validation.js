@@ -3,8 +3,6 @@
     PAST DATES.
 */
 
-// const { text } = require("body-parser");
-
 var date = new Date();
 var presentMonth = date.getMonth() + 1;
     if(presentMonth < 10) {
@@ -34,5 +32,3 @@ function validate() {
         alert("Please enter a valid e-mail...");
     }
 }
-
-// module.exports = validate;
