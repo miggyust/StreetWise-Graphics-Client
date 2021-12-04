@@ -71,7 +71,7 @@ router.post("/create", (req,res) => {
     
     const queryString = "INSERT INTO appointment (Date,Time,Platform,Message,First_Name, Last_Name, Phone_Number, Customer_Email) VALUES (?,?,?,?,?,?,?,?)"
 
-    connection.query(queryString, [date,time,platform,message,firstname,lastname,phonenum,mail],(err, results, fields)=>{
+    pool.query(queryString, [date,time,platform,message,firstname,lastname,phonenum,mail],(err, results, fields)=>{
         if (err){
             console.log("Failed to insert" + err)
         }
@@ -81,7 +81,7 @@ router.post("/create", (req,res) => {
 
 router.get("/create-SGdb", (req, res) =>{
     let sql = "CREATE DATABASE streetwisegraphics";
-    connection.query(sql, (err, result) => {
+    pool.query(sql, (err, result) => {
         if(!err){
             res.send("successfully created SG database");
         }else{
@@ -92,7 +92,7 @@ router.get("/create-SGdb", (req, res) =>{
 
 router.get("/create-appointment",(req,res) => {
     let sql = "CREATE TABLE appointment (Appointment_ID int AUTO_INCREMENT, Date date, Time time, Platform varchar(50), Message varchar(50), First_Name varchar(50), Last_Name varchar(50), Phone_Number varchar(50), Customer_Email varchar(50), PRIMARY KEY(Appointment_ID))"
-    connection.query(sql, (err, result) => {
+    pool.query(sql, (err, result) => {
         if(!err){
             res.send("successfully created appointment table");
         }else{
