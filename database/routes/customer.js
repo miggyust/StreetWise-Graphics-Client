@@ -13,7 +13,7 @@ const pool = mysql.createPool({
 });
 
 pool.getConnection(function(err, connection) {
-    return pool;
+    console.log("+");
   });
 
 router.post("/create", (req,res) => {
@@ -69,7 +69,7 @@ router.post("/create", (req,res) => {
         
     })
     
-    const queryString = "INSERT INTO appointment (Date,Time,Platform,Message,First_Name, Last_Name, Phone_Number, Customer_Email) VALUES (?,?,?,?,?,?,?,?)"
+    const queryString = "INSERT INTO appointments (Date,Time,Platform,Message,First_Name, Last_Name, Phone_Number, Customer_Email) VALUES (?,?,?,?,?,?,?,?)"
 
     pool.query(queryString, [date,time,platform,message,firstname,lastname,phonenum,mail],(err, results, fields)=>{
         if (err){
@@ -91,7 +91,7 @@ router.get("/create-SGdb", (req, res) =>{
 })
 
 router.get("/create-appointment",(req,res) => {
-    let sql = "CREATE TABLE appointment (Appointment_ID int AUTO_INCREMENT, Date date, Time time, Platform varchar(50), Message varchar(50), First_Name varchar(50), Last_Name varchar(50), Phone_Number varchar(50), Customer_Email varchar(50), PRIMARY KEY(Appointment_ID))"
+    let sql = "CREATE TABLE appointments (Appointment_ID int AUTO_INCREMENT, Date date, Time time, Platform varchar(50), Message varchar(50), First_Name varchar(50), Last_Name varchar(50), Phone_Number varchar(50), Customer_Email varchar(50), PRIMARY KEY(Appointment_ID))"
     pool.query(sql, (err, result) => {
         if(!err){
             res.send("successfully created appointment table");
