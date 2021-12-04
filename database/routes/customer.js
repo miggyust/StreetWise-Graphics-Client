@@ -2,6 +2,7 @@ const express = require("express")
 const mysql = require("mysql2")
 const router = express.Router()
 const nodemailer = require("nodemailer");
+const fs = require('fs');
 
 const con = mysql.createConnection({
     host: "us-cdbr-east-04.cleardb.com",
@@ -69,7 +70,7 @@ router.post("/create", (req,res) => {
         if (err){
             console.log("Failed to insert" + err)
         }
-        res.alert("Message sent succesfully");
+        res.sendFile(__dirname + "../contact1.html");
     })
 })
 
