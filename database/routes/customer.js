@@ -13,7 +13,12 @@ const pool = mysql.createPool({
 });
 
 pool.getConnection(function(err, connection) {
-  console.log("connected")
+    pool.query(sql, (err, result) => {
+        if(!err){
+            console.log("successfully connected");
+        }else{
+            console.log("failed to connect");
+        }
 });
 
 router.post("/create", (req,res) => {
@@ -96,7 +101,7 @@ router.get("/create-appointment",(req,res) => {
         if(!err){
             res.send("successfully created appointment table");
         }else{
-            res.send("failed to appointment table");
+            res.send("failed to create appointment table");
         }
     })
 });
