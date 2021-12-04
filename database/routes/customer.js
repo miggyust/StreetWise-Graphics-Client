@@ -100,10 +100,6 @@ router.get("/create-appointment",(req,res) => {
         }
     })
 });
-/*pool.end(function(err) {
-    if (err) {
-      return console.log(err.message);
-    }
-  });*/
+
 
 module.exports = router;
