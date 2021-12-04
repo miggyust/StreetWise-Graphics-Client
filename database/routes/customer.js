@@ -4,11 +4,15 @@ const router = express.Router()
 const nodemailer = require("nodemailer");
 
 
-const con = mysql.createConnection({
+const pool = mysql.createPool({
+    connectionLimit: 10,
     host: "us-cdbr-east-04.cleardb.com",
     user: "ba4ebefdbbaee2",
     password: "9d45ece4",
     database: "heroku_670d6f6d8482b89",
+});
+pool.getConnection(function(err, connection) {
+  console.log("connected")
 });
 
 router.post("/create", (req,res) => {
@@ -95,5 +99,10 @@ router.get("/create-appointment",(req,res) => {
         }
     })
 });
+pool.end(function(err) {
+    if (err) {
+      return console.log(err.message);
+    }
+  });
 
 module.exports = router;
