@@ -27,7 +27,7 @@ router.post("/create", (req,res) => {
     const platform = req.body.platform 
     const message = req.body.message
 
-    //output html can be improved for confirmation
+    //output html for Email
     const output = `
     <p><b>First Name: </b> ${firstname}</p>
     <p><b>Last Name: </b> ${lastname}</p>
