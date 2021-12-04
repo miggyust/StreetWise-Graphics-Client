@@ -20,6 +20,7 @@ router.post("/create", (req,res) => {
     const platform = req.body.platform 
     const message = req.body.message
 
+    //output html can be improved for confirmation
     const output = `
     <p><b>First Name: </b> ${firstname}</p>
     <p><b>Last Name: </b> ${lastname}</p>
@@ -27,7 +28,11 @@ router.post("/create", (req,res) => {
     <p><b>Time: </b> ${time} </p>
     <p><b>Phone Number: </b> ${phonenum} </p>
     <p><b>Platform: </b> ${platform} </p>
-    <p><b>Message: </b> ${message}</p>`
+    <p><b>Message: </b> ${message}</p>
+    <br>
+    <p><b>Please wait the response in the form of email or text messages from Jericho Robles, owner of Streetwise Graphics</b></p>
+    <p><b>for the confirmation of the appointment as he might have other schedules or not available. Thank you for your patience and have a good day</b></p>
+    <p><b>This is an auto generated email please do not reply.</b></p>`
 
     let transporter = nodemailer.createTransport({
         service: "gmail",
@@ -44,7 +49,7 @@ router.post("/create", (req,res) => {
         from:"streetwisegraphicsofficial@gmail.com", 
         to: mail,
         //secondary(optional or put owner's email) cc: "alversadel@gmail.com",
-        subject: "Appointment Details from Streetwise Graphics",
+        subject: "Confirmation of Appointment Details from Streetwise Graphics",
         text: "Appointment Details",
         html:output
     } 
