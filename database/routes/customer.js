@@ -2,7 +2,7 @@ const express = require("express")
 const mysql = require("mysql2")
 const router = express.Router()
 const nodemailer = require("nodemailer");
-const fs = require('fs');
+
 
 const con = mysql.createConnection({
     host: "us-cdbr-east-04.cleardb.com",
