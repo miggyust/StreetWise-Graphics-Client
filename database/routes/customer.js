@@ -14,6 +14,7 @@ const pool = mysql.createPool({
 
 pool.getConnection(function(err, connection) {
     console.log("connected");
+    connection.release();
   });
 
 router.post("/create", (req,res) => {
