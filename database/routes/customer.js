@@ -70,7 +70,7 @@ router.post("/create", (req,res) => {
         if (err){
             console.log("Failed to insert" + err)
         }
-        res.sendFile(__dirname + "../contact1.html");
+        res.sendFile("/app/contact1.html");
     })
 })
 
