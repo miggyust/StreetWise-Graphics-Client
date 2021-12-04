@@ -20,7 +20,7 @@ router.post("/create", (req,res) => {
     const platform = req.body.platform 
     const message = req.body.message
 
-    const output = `
+    /*const output = `
     <p><b>First Name: </b> ${firstname}</p>
     <p><b>Last Name: </b> ${lastname}</p>
     <p><b>Date: </b> ${date} </p>
@@ -56,7 +56,7 @@ router.post("/create", (req,res) => {
             console.log("email sent succesfuly")
         
     })
-    
+    */
     const queryString = "INSERT INTO appointment (Date,Time,Platform,Message,First_Name, Last_Name, Phone_Number, Customer_Email) VALUES (?,?,?,?,?,?,?,?)"
 
     con.query(queryString, [date,time,platform,message,firstname,lastname,phonenum,mail],(err, results, fields)=>{
