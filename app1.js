@@ -13,7 +13,6 @@ app.use(express.urlencoded({
 
 app.use(router)
 
-
 app.get("/",(req,res)=>{
   res.send("Streetwise Graphics");
 });
