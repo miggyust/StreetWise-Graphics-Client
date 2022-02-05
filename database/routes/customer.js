@@ -14,7 +14,8 @@ const pool = mysql.createPool({
     database: "heroku_670d6f6d8482b89",
 });
 */
-const pool = mysql.createConnection({
+const pool = mysql.createPool({
+    connectionLimit: 10,
 	host     : 'localhost',
 	user     : 'root',
 	database : 'streetwisegraphics'
@@ -27,7 +28,7 @@ pool.getConnection(function(err, connection) {
   });
 
 //create table for users log in
-router.get("/create-user",(req,res) => {
+router.get("/create-usertable",(req,res) => {
     let sql = "CREATE TABLE user (user_ID int AUTO_INCREMENT, user_Email varchar(50), user_Password varchar(50), first_Name varchar(50), last_Name varchar(50), PRIMARY KEY(user_ID))"
     pool.query(sql, (err, result) => {
         if(!err){
@@ -57,9 +58,9 @@ router.post("/create-user", (req,res) => {
 })
 
 //login user
-app.post('/login', function(request, response) {
-	let email = request.body.user_Email;
-	let password = request.body.user_Password;
+router.post('/login', function(request, response) {
+	let email = request.body.email;
+	let password = request.body.password;
 	
 	if (email && password) {
 		
