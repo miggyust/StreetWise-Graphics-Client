@@ -4,7 +4,7 @@ const mysql = require("mysql2")
 const router = express.Router()
 const nodemailer = require("nodemailer");
 
-//create a database connection
+//create a database connection (deployed)
 const pool = mysql.createPool({
     connectionLimit: 10,
     host: "us-cdbr-east-04.cleardb.com",
