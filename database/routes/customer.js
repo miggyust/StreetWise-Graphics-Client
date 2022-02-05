@@ -64,9 +64,10 @@ router.post('/login', function(request, response) {
 	
 	if (email && password) {
 		
-		pool.query('SELECT * FROM user WHERE username = ? AND password = ?', [email, password], function(error, results, fields) {
+		pool.query('SELECT * FROM user WHERE user_Email = ? AND user_Password = ?', [email, password], function(error, results, fields) {
 			
-			if (error) throw error;
+			if (error){
+                console.log("User not found")};
 			
 			if (results.length > 0) {
 				
