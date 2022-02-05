@@ -52,12 +52,37 @@ router.post("/create-user", (req,res) => {
         if (err){
             console.log("Failed to insert")
         }
-        res.send("Message sent successfully");
+        res.res("Successfuly Registered");
     })
 })
 
 //login user
-
+app.post('/login', function(request, response) {
+	let email = request.body.user_Email;
+	let password = request.body.user_Password;
+	
+	if (email && password) {
+		
+		pool.query('SELECT * FROM user WHERE username = ? AND password = ?', [email, password], function(error, results, fields) {
+			
+			if (error) throw error;
+			
+			if (results.length > 0) {
+				
+				request.session.loggedin = true;
+				request.session.email = email;
+				
+				response.redirect('/homepage');
+			} else {
+				response.send('Incorrect Email and/or Password!');
+			}			
+			response.end();
+		});
+	} else {
+		response.send('Please enter Email and Password!');
+		response.end();
+	}
+});
 //post method when submitting a form
 router.post("/create", (req,res) => {
     const firstname =  req.body.firstname //name from the html
