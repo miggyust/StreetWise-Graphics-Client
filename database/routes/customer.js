@@ -74,7 +74,7 @@ router.post('/login', function(request, response) {
 				request.session.loggedin = true;
 				request.session.email = email;
 				
-				response.redirect('/homepage');
+				response.redirect('/homepage.html');
 			} else {
 				response.send('Incorrect Email and/or Password!');
 			}			
