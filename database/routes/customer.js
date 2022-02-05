@@ -4,6 +4,7 @@ const mysql = require("mysql2")
 const router = express.Router()
 const nodemailer = require("nodemailer");
 
+/*
 //create a database connection (deployed)
 const pool = mysql.createPool({
     connectionLimit: 10,
@@ -12,11 +13,51 @@ const pool = mysql.createPool({
     password: "9d45ece4",
     database: "heroku_670d6f6d8482b89",
 });
+*/
+const pool = mysql.createConnection({
+	host     : 'localhost',
+	user     : 'root',
+	database : 'streetwisegraphics'
+});
+
 //get connection from pool
 pool.getConnection(function(err, connection) {
     console.log("connected");
     connection.release();
   });
+
+//create table for users log in
+router.get("/create-user",(req,res) => {
+    let sql = "CREATE TABLE user (user_ID int AUTO_INCREMENT, user_Email varchar(50), user_Password varchar(50), first_Name varchar(50), last_Name varchar(50), PRIMARY KEY(user_ID))"
+    pool.query(sql, (err, result) => {
+        if(!err){
+            res.send("successfully created user table");
+        }else{
+            res.send("failed to create appointments table");
+        }
+    })
+});
+
+//Inserting user information into database
+router.post("/create-user", (req,res) => {
+    const user_Email = req.body.user_Email
+    const user_Password = req.body.user_Password
+    const first_Name = req.body.First_Name
+    const last_Name =req.body.Last_Name
+
+
+    const queryString = "INSERT INTO user (user_Email, user_Password, First_Name, Last_Name) VALUES (?,?,?,?)"
+
+    pool.query(queryString, [user_Email, user_Password, first_Name, last_Name],(err, results, fields)=>{
+        if (err){
+            console.log("Failed to insert")
+        }
+        res.send("Message sent successfully");
+    })
+})
+
+//login user
+
 //post method when submitting a form
 router.post("/create", (req,res) => {
     const firstname =  req.body.firstname //name from the html
