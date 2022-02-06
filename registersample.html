@@ -13,7 +13,7 @@
 	<body>
 		<div class="login">
 			<h1>Register</h1>
-			<form action="/create-user" method="post">
+			<form action="/create-user" method="post" onsubmit="checkpass()">
 				<label for="email">
 					<i class="fas fa-user"></i>
 				</label>
@@ -38,7 +38,7 @@
 				</label>
 				<input type="text" name="last_Name" placeholder="Lastname" required>
                 
-                <input type="submit" value="Register" onkeyup="check()>
+                <input type="submit" value="Register">
 			</form>
 		</div>
 	</body>

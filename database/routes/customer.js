@@ -29,7 +29,7 @@ pool.getConnection(function(err, connection) {
 
 //create table for users log in and register
 router.get("/create-usertable",(req,res) => {
-    let sql = "CREATE TABLE user (user_ID int AUTO_INCREMENT, user_Email varchar(50), user_Password varchar(50), first_Name varchar(50), last_Name varchar(50), PRIMARY KEY(user_ID))"
+    let sql = "CREATE TABLE user (user_Email varchar(50), user_Password varchar(50), first_Name varchar(50), last_Name varchar(50), PRIMARY KEY(user_Email))"
     pool.query(sql, (err, result) => {
         if(!err){
             res.send("successfully created user table");
@@ -48,14 +48,16 @@ router.post("/create-user", (req,res) => {
 
 
     const queryString = "INSERT INTO user (user_Email, user_Password, First_Name, Last_Name) VALUES (?,?,?,?)"
-
+        
     pool.query(queryString, [user_Email, user_Password, first_Name, last_Name],(err, results, fields)=>{
         if (err){
             console.log("Failed to insert")
         }
         res.redirect("loginpagesample.html");
     })
-})
+    
+
+});
 
 //login user
 router.post('/login', function(request, response) {
@@ -148,7 +150,7 @@ router.post("/create", (req,res) => {
         }
         res.send("Message sent successfully");
     })
-})
+});
 //local testing
 router.get("/create-SGdb", (req, res) =>{
     let sql = "CREATE DATABASE streetwisegraphics";
@@ -159,7 +161,7 @@ router.get("/create-SGdb", (req, res) =>{
             res.send("failed to created SG database");
         }
     })
-})
+});
 
 router.get("/create-appointment",(req,res) => {
     let sql = "CREATE TABLE appointment (Appointment_ID int AUTO_INCREMENT, Date date, Time time, Platform varchar(50), Message varchar(50), First_Name varchar(50), Last_Name varchar(50), Phone_Number varchar(50), Customer_Email varchar(50), PRIMARY KEY(Appointment_ID))"

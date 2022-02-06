@@ -1,5 +1,8 @@
+
+
+var match = false
 var check = function() {
-    let match = false;
+   
     if (document.getElementById('password').value ==
       document.getElementById('confirm_Password').value) {
       document.getElementById('message').style.color = 'green';
@@ -9,7 +12,11 @@ var check = function() {
       document.getElementById('message').style.color = 'red';
       document.getElementById('message').innerHTML = 'not matching';
     }
-    if (match==false){
+  }
+
+var checkpass = () => {
+ if (match==false){
         alert("Passwords do not match");
     }
-  }
+}
+ 
