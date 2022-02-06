@@ -27,14 +27,14 @@ pool.getConnection(function(err, connection) {
     connection.release();
   });
 
-//create table for users log in
+//create table for users log in and register
 router.get("/create-usertable",(req,res) => {
     let sql = "CREATE TABLE user (user_ID int AUTO_INCREMENT, user_Email varchar(50), user_Password varchar(50), first_Name varchar(50), last_Name varchar(50), PRIMARY KEY(user_ID))"
     pool.query(sql, (err, result) => {
         if(!err){
             res.send("successfully created user table");
         }else{
-            res.send("failed to create appointments table");
+            res.send("failed to create user table");
         }
     })
 });
@@ -43,8 +43,8 @@ router.get("/create-usertable",(req,res) => {
 router.post("/create-user", (req,res) => {
     const user_Email = req.body.user_Email
     const user_Password = req.body.user_Password
-    const first_Name = req.body.First_Name
-    const last_Name =req.body.Last_Name
+    const first_Name = req.body.first_Name
+    const last_Name =req.body.last_Name
 
 
     const queryString = "INSERT INTO user (user_Email, user_Password, First_Name, Last_Name) VALUES (?,?,?,?)"
@@ -53,7 +53,7 @@ router.post("/create-user", (req,res) => {
         if (err){
             console.log("Failed to insert")
         }
-        res.res("Successfuly Registered");
+        res.redirect("loginpagesample.html");
     })
 })
 
