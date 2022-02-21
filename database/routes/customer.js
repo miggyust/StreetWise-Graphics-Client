@@ -89,7 +89,7 @@ router.post('/login', function(request, response) {
 	}
 });
 //post method when submitting a form
-router.post("/create", (req,res) => {
+router.post("/create-form", (req,res) => {
     const firstname =  req.body.firstname //name from the html
     const lastname = req.body.lastname  
     const date = req.body.selectdate 
