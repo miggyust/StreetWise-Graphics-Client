@@ -56,8 +56,6 @@ router.post("/create-user", (req,res) => {
         console.log("Failed to insert")
         res.send("user already exists")
     })
-    
-
 });
 
 //login user
