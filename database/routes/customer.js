@@ -51,7 +51,7 @@ router.post("/create-user", (req,res) => {
         
     pool.query(queryString, [user_Email, user_Password, first_Name, last_Name],(err, results, fields)=>{
         if (!err){
-            res.redirect("loginpagesample.html");
+            res.redirect("/loginpage.html");
         }
         console.log("Failed to insert")
         res.send("user already exists")
